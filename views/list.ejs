@@ -1,0 +1,85 @@
+<%- include("header") -%>
+<div class="box1" id="heading">       
+    <h1>Today</h1>
+</div>        
+<div class="box">       
+
+<% for(var i=0;i<newListItem.length;i++) { %>
+<form action="/delete" method="post">
+     <div class="item">
+        <div class="round">
+        <input type="checkbox" name="checkbox" value="<%= newListItem[i]._id%>"  onChange="this.form.submit()" id="checkbox">            
+        <label for="checkbox"></label>
+        </div>
+        <p><%= newListItem[i].name %></p>
+        <br>
+    </div>         
+</form> 
+<% } %>
+
+<!-- <form >
+    <div class="item">
+        <div class="round">
+        <input type="checkbox" id="checkbox">         
+        <label for="checkbox"></label>
+        </div>
+        <p>Enjoy the party</p>
+        <br>
+    </div>
+</form>
+<form >
+    <div class="item">
+        <div class="round">
+        <input type="checkbox" id="checkbox">
+        <label for="checkbox"></label>
+        </div>
+        <p>IT Buddies welcomes you</p>
+        <br>
+     </div>         
+</form>
+<form >
+    <div class="item">
+        <div class="round">
+        <input type="checkbox" id="checkbox">
+        <label for="checkbox"></label>
+        </div>
+        <p>PLS like</p>
+        <br>
+     </div>
+</form>
+<form >
+    <div class="item">
+        <div class="round">
+        <input type="checkbox"id="checkbox">
+        <label for="checkbox"></label>
+        </div>
+        <p>HEY GUYS</p>
+        <br>
+        </div>         
+    </form>          -->
+    <form class="item" action="/" method="post">
+        <input type="text" name="n"  placeholder="new"><hr>
+        <label for="priority">Priority:</label>
+                <select id="priority" name="priority">
+                    <option value="Low">Low</option>
+                    <option value="Medium">Medium</option>
+                    <option value="High">High</option>
+                </select><hr>
+        <button id="b" type="submit" <span id="s2"></span>+</button> 
+    </form>
+
+    
+
+    <form action="/" method="POST" class="new-task-form">
+  <input type="text" name="name" placeholder="Task name" required>
+  <input type="text" name="reminderTime" placeholder="Reminder time" required>
+  <select name="notificationMethod" required>
+    <option value="Email">Email</option>
+    <option value="Push Notification">Push Notification</option>
+    <!-- Add more options as needed -->
+  </select>
+  <button type="submit">Add Task</button>
+</form>
+
+
+</div>

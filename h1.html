@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div class="grid-container">
+        <div class="box1" id="heading">       
+            <h1>Today</h1>
+        </div>        
+        <div class="box tasks-box">         
+        <form >
+             <div class="item">
+                <div class="round">
+                <input type="checkbox"id="checkbox">            
+                <label for="checkbox"></label>
+                </div>
+                <p>Welcome to a beautiful day</p>
+                <br>
+            </div>         
+        </form>      
+        <form >
+            <div class="item">
+                <div class="round">
+                <input type="checkbox" id="checkbox">
+                 
+                <label for="checkbox"></label>
+                </div>
+                <p>Enjoy your day</p>
+                <br>
+            </div>
+        </form>
+        <form >
+            <div class="item">
+                <div class="round">
+                <input type="checkbox" id="checkbox">
+                    <label for="checkbox"></label>
+                </div>
+                <p>Get your tasks done</p>
+                <br>
+             </div>         
+        </form>
+        <form >
+            <div class="item">
+                <div class="round">
+                <input type="checkbox" id="checkbox">
+                <label for="checkbox"></label>
+                </div>
+                <p>Keep grinding</p>
+                <br>
+             </div>
+        </form>
+        <form >
+            <div class="item">
+                <div class="round">
+                <input type="checkbox"id="checkbox">
+                <label for="checkbox"></label>
+                </div>
+                <p>Stay happy</p>
+                <br>
+                </div>         
+            </form>         
+        <form class="item" >
+                <input type="text"  placeholder="new"><hr>
+                <label for="priority">Priority:</label>
+                <select id="priority" name="priority">
+                    <option value="Low">Low</option>
+                    <option value="Medium">Medium</option>
+                    <option value="High">High</option>
+                </select><hr>
+                <button id="b" type="submit" <span id="s2"></span>+</span></button> 
+        </form>  
+        </div>
+        <div class="box tasks-box">
+            <form action="/" method="POST" class="new-task-form">
+                <input type="text" name="name" placeholder="Task name" required>
+                <input type="text" name="reminderTime" placeholder="Reminder time" required>
+                <select name="notificationMethod" required>
+                  <option value="Email">Email</option>
+                  <option value="Push Notification">Push Notification</option>
+                </select>
+                <button type="submit">Add Task</button>
+              </form>
+        </div>
+        
+    </div>
+
+    </body>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const prioritySelect = document.getElementById('priority');
+            const form = document.querySelector('.box.tasks-box form.item');
+
+            prioritySelect.addEventListener('change', function () {
+                const selectedPriority = prioritySelect.value.toLowerCase();
+                form.style.borderColor = getPriorityColor(selectedPriority);
+            });
+
+            function getPriorityColor(priority) {
+                switch (priority) {
+                    case 'low':
+                        return 'green'; // for low priority
+                    case 'medium':
+                        return 'yellow'; //  for medium priority
+                    case 'high':
+                        return 'red'; //  for high priority
+                    default:
+                        return 'black'; // Default color
+                }
+            }
+        });
+    </script>
+
+</html>
